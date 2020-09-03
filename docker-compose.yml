@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  pulsar-test-node:
+    image: pulsar-test-node
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000
+
+  pulsar:
+    image: apachepulsar/pulsar:latest
+    entrypoint: bin/pulsar standalone
+    hostname: pulsar
